@@ -1,5 +1,6 @@
 const {Client , GatewayIntentBits   } = require(`discord.js`)
-const EventEmitter = require('events');
+const express = require(`express`)
+const app = express()
 require('dotenv').config();
 
 const token = process.env.DISCORD_BOT_TOKEN;
@@ -34,4 +35,13 @@ client.on(`messageCreate` , message => {
         .catch(console.error);
     }
 })
+
+// Set up express server with a port
+    const port = process.env.PORT || 3000;
+    app.get(`/`,(req , res) => {
+        res.send(`AntiSwearing bot is online!`)
+    })
+    app.listen(port , () => {
+        console.log(`Server is listening on port ${port}`);
+    })
 client.login(token).catch((err) => console.error(`Error logging in: ${err}`));
