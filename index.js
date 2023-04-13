@@ -1,4 +1,5 @@
 const {Client , GatewayIntentBits   } = require(`discord.js`)
+const EventEmitter = require('events');
 require('dotenv').config();
 
 const token = process.env.DISCORD_BOT_TOKEN;
