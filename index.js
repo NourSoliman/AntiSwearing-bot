@@ -12,8 +12,9 @@ const swearWords = [`a7a`, `dick`, `ksomk`, `yabn elmtnaka`, `yl3n`,
  `ba3bask`, `kos` , `كس` , `طيز` , `bulbul` , `bolbol` 
 , `tez` , `بلبل` ,`ديك` , `يلعنديك` , 
 `يلعن دين` , `متناك` , `بتتناك` , `كسمك` ,
- `شرموط` , `شرموطه` , `خول` `عرص` ,`احبه`, `بعبص` ,`معرص` , `دين` , `امك` ,`أمك`,`بعبصك`]
-
+ `شرموط` , `شرموطه` , `خول` , `عرص` ,`احبه`, `بعبص` ,`معرص` , `دين` , `امك` ,`أمك`,`بعبصك` , `5wal` , `5awal`]
+const englishSwearWords = [`Fuck` , `FuckYou` , `fuck` , `fuckyou` , `fk u` 
+, `mf` , `motherfucker` , `dick` , `pussy` , `ass` , `boobs`, `killyourself` , `kys` , `amk` , `omfg` ]
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -46,7 +47,16 @@ client.on(`messageCreate`, message => {
     message.channel.send({
         embeds:[new EmbedBuilder().setDescription(`**${userMention}**اتكلم بأدب يا ولد`)
         .setImage(`https://i.ytimg.com/vi/DXyQTvj6Nv8/mqdefault.jpg`)
-        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkRed`).]
+        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkRed`).setTimestamp()]
+    })
+    message.delete().then(()=> console.log(`deleted`))
+}
+else if(englishSwearWords) {
+    const userMention = `<@${message.author.id}>`
+    message.channel.send({
+        embeds:[new EmbedBuilder().setDescription(`**${userMention}**`)
+        .setImage(`https://stayhipp.com/wp-content/uploads/2019/02/you-better-watch.jpg`)
+        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkRed`).setTimestamp()]
     })
     message.delete().then(()=> console.log(`deleted`))
 }
