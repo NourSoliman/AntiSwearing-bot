@@ -35,6 +35,9 @@ client.on(`messageCreate`, message => {
     const containsSwearWord = swearWords.some((word) => {
         return message.content.includes(word)
     })
+    const containsEnglishSwearWord = englishSwearWords.some((word) => {
+        return message.content.includes(word)
+    })
     if(containsSwearWord) {
     // const userMention = `<@${message.author.id}>`
     // message.channel.send(`${userMention}, اتكلم بأدب يا ولد ` , {files:[{attachment:`picture.jpg`}]}).catch(error => {console.log(error);})
@@ -51,12 +54,12 @@ client.on(`messageCreate`, message => {
     })
     message.delete().then(()=> console.log(`deleted`))
 }
-else if(englishSwearWords) {
+else if(containsEnglishSwearWord) {
     const userMention = `<@${message.author.id}>`
     message.channel.send({
         embeds:[new EmbedBuilder().setDescription(`**${userMention}**`)
         .setImage(`https://stayhipp.com/wp-content/uploads/2019/02/you-better-watch.jpg`)
-        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkRed`).setTimestamp()]
+        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkReda7a`).setTimestamp()]
     })
     message.delete().then(()=> console.log(`deleted`))
 }
