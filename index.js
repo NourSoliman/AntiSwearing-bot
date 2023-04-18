@@ -59,7 +59,7 @@ else if(containsEnglishSwearWord) {
     message.channel.send({
         embeds:[new EmbedBuilder().setDescription(`**${userMention}**`)
         .setImage(`https://stayhipp.com/wp-content/uploads/2019/02/you-better-watch.jpg`)
-        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkReda7a`).setTimestamp()]
+        .setFooter({text:`NourSoliman`}).setTitle(`Warning Message`).setColor(`DarkRed`).setTimestamp()]
     })
     message.delete().then(()=> console.log(`deleted`))
 }
