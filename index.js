@@ -4,15 +4,9 @@ const app = express()
 require('dotenv').config();
 
 const token = process.env.DISCORD_BOT_TOKEN;
-//اسف على هذه الالفاظ لكن ما باليد حيله علشان انا بقعد فى الديسكورد وقت كبير بشوف الالفاظ دى كتير و كانت حاجه مش كويسه خالص
-const swearWords = [`a7a`, `dick`, `ksomk`, `yabn elmtnaka`, `yl3n`,
- `omk`, `fuck you`, `mf`, `motherFucker`, `momes`, 
- `mtnak`, `mnayk`, `den`, `sharmota`, `a7ba`, 
- `fuck of`, `fuck off`, `ktfom`, `amk`, `tezk`, 
- `ba3bask`, `kos` , `كس` , `طيز` , `bulbul` , `bolbol` 
-, `tez` , `بلبل` ,`ديك` , `يلعنديك` , 
-`يلعن دين` , `متناك` , `بتتناك` , `كسمك` ,
- `شرموط` , `شرموطه` , `خول` , `عرص` ,`احبه`, `بعبص` ,`معرص` , `دين` , `امك` ,`أمك`,`بعبصك` , `5wal` , `5awal`]
+//deleted most of arabic bad words...
+const swearWords = [`a7a`]
+
 const englishSwearWords = [`Fuck` , `FuckYou` , `fuck` , `fuckyou` , `fk u` 
 , `mf` , `motherfucker` , `dick` , `pussy` , `ass` , `boobs`, `killyourself` , `kys` , `amk` , `omfg` ]
 const client = new Client({
